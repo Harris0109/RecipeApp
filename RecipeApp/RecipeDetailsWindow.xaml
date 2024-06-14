@@ -1,0 +1,52 @@
+﻿
+    <!--Front-end for RecipeDetails-->
+    <Window x:Class="RecipeApp.RecipeDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Recipe Details" Height="600" Width="400">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Margin="10">
+            
+            <!--Ensure responsiveness-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!--Text block for Recipe details-->
+            <TextBlock Grid.Row="0" Text="Recipe Details" FontSize="20" FontWeight="Bold" Margin="0,0,0,10"/>
+
+            <StackPanel Grid.Row="1">
+
+                <!--Text block for filter Recipes -->
+                <TextBlock Text="Filter Recipes:"/>
+                <TextBox Name="FilterTextBox" Width="300" Margin="0,0,0,10" TextChanged="FilterTextBox_TextChanged"/>
+
+
+                <!--Text block for filter ingredients -->
+                <TextBlock Text="Ingredient Filter:"/>
+                <TextBox Name="IngredientFilterTextBox" Width="300" Margin="0,0,0,10"/>
+
+
+                <!--Text block for filter Food group -->
+                <TextBlock Text="Food Group Filter:"/>
+                <ComboBox Name="FoodGroupFilterComboBox" Width="300" Margin="0,0,0,10">
+                    <ComboBoxItem Content="Vegetables"/>
+                    <ComboBoxItem Content="Fruits"/>
+                    <ComboBoxItem Content="Proteins"/>
+                    <ComboBoxItem Content="Grains"/>
+                </ComboBox>
+
+                <TextBlock Text="Max Calories:"/>
+                <TextBox Name="MaxCaloriesTextBox" Width="300" Margin="0,0,0,10"/>
+
+                <ListBox Name="RecipeListBox" Margin="0,0,0,10" SelectionChanged="RecipeListBox_SelectionChanged"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+                <Button Name="CloseButton" Content="Close" Width="100" Click="CloseButton_Click"/>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Window>

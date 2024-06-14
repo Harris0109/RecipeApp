@@ -1,0 +1,38 @@
+﻿<Window x:Class="RecipeApp.AddRecipeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Add Recipe" Height="600" Width="400">
+   
+    <!--Front-end for AddRecipeWindow, making window responsive-->
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Margin="10" Width="1387">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="497.48"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+             
+            <!--Text Block for Add Recipe-->
+            <TextBlock Grid.Row="0" Text="Add Recipe" FontSize="20" FontWeight="Bold" Margin="0,0,0,10"/>
+
+
+            <!--Text Block for Recipe name-->
+            <StackPanel Grid.Row="1">
+                <TextBlock Text="Recipe Name:"/>
+                <TextBox Name="RecipeNameTextBox" Width="300" Margin="0,0,0,10"/>
+
+
+                <!--Text Block for amount of ingerdients-->
+                <TextBlock Text="Number of Ingredients:"/>
+                <TextBox Name="IngredientCountTextBox" Width="300" Margin="0,0,0,10" TextChanged="IngredientCountTextBox_TextChanged"/>
+
+                <StackPanel Name="IngredientsPanel" Margin="0,0,0,10"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+                <Button Name="CancelButton" Content="Cancel" Width="100" Margin="0,0,10,0" Click="CancelButton_Click"/>
+                <Button Name="SaveButton" Content="Save" Width="100" Click="SaveButton_Click"/>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Window>
